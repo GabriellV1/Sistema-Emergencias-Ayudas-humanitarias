@@ -6,5 +6,5 @@ Base de Datos I
 
 ##Integrantes
 -Gabriel Vilafuerte Huachaca
--Carlos Uracahua Valenzuela 
+-Carlos Uracahua Valenzuela
 
