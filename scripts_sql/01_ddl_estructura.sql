@@ -88,6 +88,23 @@ CREATE TABLE almacen (
         PRIMARY KEY (cod_almacen)
 );
 
+-- Creacion de tablas del sistema de almacen.
+CREATE TABLE suministro (
+    cod_suministro VARCHAR(20) NOT NULL,
+    nombre VARCHAR(120) NOT NULL,
+    descripcion VARCHAR(500),
+    unidad_medida VARCHAR(30) NOT NULL,
 
+    CONSTRAINT pk_suministro
+        PRIMARY KEY (cod_suministro)
+);
+
+-- Creacion de tablas del sistema de almacen.
+
+-- Creacion de tablas del sistema de almacen.
+
+-- Creacion de tablas del sistema de almacen.
+
+-- Creacion de tablas del sistema de almacen.
 
 
