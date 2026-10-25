@@ -131,5 +131,13 @@ CREATE TABLE entrega (
         PRIMARY KEY (cod_entrega)
 );
 -- Creacion de tablas del sistema de almacen.
+CREATE TABLE detalle_entrega (
+    cod_entrega VARCHAR(20) NOT NULL,
+    cod_suministro VARCHAR(20) NOT NULL,
+    cantidad_entregada NUMERIC(12,3) NOT NULL,
+
+    CONSTRAINT pk_detalle_entrega
+        PRIMARY KEY (cod_entrega, cod_suministro)
+);
 
 
