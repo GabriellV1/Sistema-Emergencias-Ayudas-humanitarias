@@ -51,5 +51,20 @@ CREATE TABLE solicitud_ayuda (
         PRIMARY KEY (cod_solicitud)
 );
 
+-- Creacion de tablas del sistema de membresia.}
+
+CREATE TABLE membresia (
+    cod_membresia VARCHAR(20) NOT NULL,
+    cod_personal VARCHAR(20) NOT NULL,
+    cod_brigada VARCHAR(20) NOT NULL,
+    fecha_ingreso DATE NOT NULL,
+    fecha_salida DATE,
+
+    CONSTRAINT pk_membresia
+        PRIMARY KEY (cod_membresia)
+);
+
+
+
 
 
