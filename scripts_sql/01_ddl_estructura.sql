@@ -51,7 +51,7 @@ CREATE TABLE solicitud_ayuda (
         PRIMARY KEY (cod_solicitud)
 );
 
--- Creacion de tablas del sistema de membresia.}
+-- Creacion de tablas del sistema de membresia.
 
 CREATE TABLE membresia (
     cod_membresia VARCHAR(20) NOT NULL,
@@ -62,6 +62,20 @@ CREATE TABLE membresia (
 
     CONSTRAINT pk_membresia
         PRIMARY KEY (cod_membresia)
+);
+
+-- Creacion de tablas del sistema de asignacion.
+
+CREATE TABLE asignacion (
+    cod_asignacion VARCHAR(20) NOT NULL,
+    cod_solicitud VARCHAR(20) NOT NULL,
+    cod_brigada VARCHAR(20) NOT NULL,
+    fecha_hora_asignacion TIMESTAMP NOT NULL,
+    estado_atencion VARCHAR(20) NOT NULL DEFAULT 'asignada',
+    fecha_hora_finalizacion TIMESTAMP,
+
+    CONSTRAINT pk_asignacion
+        PRIMARY KEY (cod_asignacion)
 );
 
 
