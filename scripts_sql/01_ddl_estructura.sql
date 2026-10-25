@@ -79,7 +79,14 @@ CREATE TABLE asignacion (
 );
 
 -- Creacion de tablas del sistema de almacen.
+CREATE TABLE almacen (
+    cod_almacen VARCHAR(20) NOT NULL,
+    nombre VARCHAR(100) NOT NULL,
+    direccion VARCHAR(250) NOT NULL,
 
+    CONSTRAINT pk_almacen
+        PRIMARY KEY (cod_almacen)
+);
 
 
 
