@@ -78,6 +78,8 @@ CREATE TABLE asignacion (
         PRIMARY KEY (cod_asignacion)
 );
 
+-- Creacion de tablas del sistema de almacen.
+
 
 
 
