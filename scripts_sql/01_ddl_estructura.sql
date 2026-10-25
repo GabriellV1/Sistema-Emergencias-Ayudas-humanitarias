@@ -11,3 +11,15 @@ CREATE TABLE emergencia (
     CONSTRAINT pk_emergencia
           PRIMARY KEY (cod_emergencia)
   );
+
+-- Creacion de tablas del sistema de brigada.
+
+CREATE TABLE brigada (
+    cod_brigada VARCHAR(20) NOT NULL,
+    nombre VARCHAR(100) NOT NULL,
+    especialidad VARCHAR(100) NOT NULL,
+    estado_operativo VARCHAR(25) NOT NULL,
+
+    CONSTRAINT pk_brigada
+        PRIMARY KEY (cod_brigada)
+);
