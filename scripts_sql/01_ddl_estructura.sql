@@ -37,3 +37,19 @@ CREATE TABLE personal (
         PRIMARY KEY (cod_personal)
 );
 
+-- Creacion de tablas del sistema de solicitud de ayuda.
+
+CREATE TABLE solicitud_ayuda (
+    cod_solicitud VARCHAR(20) NOT NULL,
+    cod_emergencia VARCHAR(20) NOT NULL,
+    fecha_hora_registro TIMESTAMP NOT NULL,
+    descripcion_necesidad VARCHAR(1000) NOT NULL,
+    prioridad VARCHAR(10) NOT NULL,
+    estado_atencion VARCHAR(20) NOT NULL DEFAULT 'pendiente',
+
+    CONSTRAINT pk_solicitud_ayuda
+        PRIMARY KEY (cod_solicitud)
+);
+
+
+
