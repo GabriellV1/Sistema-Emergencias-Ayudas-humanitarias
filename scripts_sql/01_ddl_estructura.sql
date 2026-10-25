@@ -110,6 +110,14 @@ CREATE TABLE detalle_solicitud (
 );
 
 -- Creacion de tablas del sistema de almacen.
+CREATE TABLE existencia (
+    cod_almacen VARCHAR(20) NOT NULL,
+    cod_suministro VARCHAR(20) NOT NULL,
+    cantidad_disponible NUMERIC(12,3) NOT NULL DEFAULT 0,
+
+    CONSTRAINT pk_existencia
+        PRIMARY KEY (cod_almacen, cod_suministro)
+);
 
 -- Creacion de tablas del sistema de almacen.
 
