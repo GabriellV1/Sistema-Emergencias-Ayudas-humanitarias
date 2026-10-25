@@ -120,7 +120,16 @@ CREATE TABLE existencia (
 );
 
 -- Creacion de tablas del sistema de almacen.
+CREATE TABLE entrega (
+    cod_entrega VARCHAR(20) NOT NULL,
+    cod_solicitud VARCHAR(20) NOT NULL,
+    cod_almacen VARCHAR(20) NOT NULL,
+    fecha_hora TIMESTAMP NOT NULL,
+    nombre_receptor VARCHAR(150) NOT NULL,
 
+    CONSTRAINT pk_entrega
+        PRIMARY KEY (cod_entrega)
+);
 -- Creacion de tablas del sistema de almacen.
 
 
