@@ -88,7 +88,7 @@ CREATE TABLE almacen (
         PRIMARY KEY (cod_almacen)
 );
 
--- Creacion de tablas del sistema de almacen.
+-- Creacion de tablas del sistema de suministro.
 CREATE TABLE suministro (
     cod_suministro VARCHAR(20) NOT NULL,
     nombre VARCHAR(120) NOT NULL,
@@ -99,7 +99,7 @@ CREATE TABLE suministro (
         PRIMARY KEY (cod_suministro)
 );
 
--- Creacion de tablas del sistema de almacen.
+-- Creacion de tablas del sistema de detalle de solicitud.
 CREATE TABLE detalle_solicitud (
     cod_solicitud VARCHAR(20) NOT NULL,
     cod_suministro VARCHAR(20) NOT NULL,
@@ -109,7 +109,7 @@ CREATE TABLE detalle_solicitud (
         PRIMARY KEY (cod_solicitud, cod_suministro)
 );
 
--- Creacion de tablas del sistema de almacen.
+-- Creacion de tablas del sistema de existencia.
 CREATE TABLE existencia (
     cod_almacen VARCHAR(20) NOT NULL,
     cod_suministro VARCHAR(20) NOT NULL,
@@ -119,7 +119,7 @@ CREATE TABLE existencia (
         PRIMARY KEY (cod_almacen, cod_suministro)
 );
 
--- Creacion de tablas del sistema de almacen.
+-- Creacion de tablas del sistema de entrega.
 CREATE TABLE entrega (
     cod_entrega VARCHAR(20) NOT NULL,
     cod_solicitud VARCHAR(20) NOT NULL,
@@ -130,7 +130,7 @@ CREATE TABLE entrega (
     CONSTRAINT pk_entrega
         PRIMARY KEY (cod_entrega)
 );
--- Creacion de tablas del sistema de almacen.
+-- Creacion de tablas del sistema de detalle de entrega.
 CREATE TABLE detalle_entrega (
     cod_entrega VARCHAR(20) NOT NULL,
     cod_suministro VARCHAR(20) NOT NULL,
