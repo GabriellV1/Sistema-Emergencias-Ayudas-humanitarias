@@ -23,3 +23,17 @@ CREATE TABLE brigada (
     CONSTRAINT pk_brigada
         PRIMARY KEY (cod_brigada)
 );
+
+-- Creacion de tablas del sistema de personal.
+
+CREATE TABLE personal (
+    cod_personal VARCHAR(20) NOT NULL,
+    nombre_completo VARCHAR(150) NOT NULL,
+    documento_identidad VARCHAR(20) NOT NULL,
+    telefono VARCHAR(25) NOT NULL,
+    especialidad VARCHAR(100) NOT NULL,
+
+    CONSTRAINT pk_personal
+        PRIMARY KEY (cod_personal)
+);
+
