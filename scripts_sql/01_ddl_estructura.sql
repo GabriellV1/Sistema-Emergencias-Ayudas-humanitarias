@@ -100,6 +100,14 @@ CREATE TABLE suministro (
 );
 
 -- Creacion de tablas del sistema de almacen.
+CREATE TABLE detalle_solicitud (
+    cod_solicitud VARCHAR(20) NOT NULL,
+    cod_suministro VARCHAR(20) NOT NULL,
+    cantidad_solicitada NUMERIC(12,3) NOT NULL,
+
+    CONSTRAINT pk_detalle_solicitud
+        PRIMARY KEY (cod_solicitud, cod_suministro)
+);
 
 -- Creacion de tablas del sistema de almacen.
 
