@@ -1,0 +1,1 @@
+-- Creacion de tablas del sistema de emergencias.
