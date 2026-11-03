@@ -142,3 +142,31 @@ WHERE cod_asignacion = 'AS001';
 
 
 
+
+
+
+
+
+-- PARTE C. COMPROBACION. Resultado esperado: 12 filas, cada una con total = 5.
+
+SELECT 'emergencia' AS tabla, COUNT(*) AS total FROM emergencia
+UNION ALL SELECT 'brigada', COUNT(*) FROM brigada
+UNION ALL SELECT 'personal', COUNT(*) FROM personal
+UNION ALL SELECT 'solicitud_ayuda', COUNT(*) FROM solicitud_ayuda
+UNION ALL SELECT 'membresia', COUNT(*) FROM membresia
+UNION ALL SELECT 'asignacion', COUNT(*) FROM asignacion
+UNION ALL SELECT 'almacen', COUNT(*) FROM almacen
+UNION ALL SELECT 'suministro', COUNT(*) FROM suministro
+UNION ALL SELECT 'detalle_solicitud', COUNT(*) FROM detalle_solicitud
+UNION ALL SELECT 'existencia', COUNT(*) FROM existencia
+UNION ALL SELECT 'entrega', COUNT(*) FROM entrega
+UNION ALL SELECT 'detalle_entrega', COUNT(*) FROM detalle_entrega;
+
+
+
+
+
+
+
+
+
