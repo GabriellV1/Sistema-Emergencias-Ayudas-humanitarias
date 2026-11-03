@@ -4,6 +4,7 @@
 BEGIN;
 
 -- INSERT: CINCO REGISTROS EN CADA TABLA.
+
 -- 1. EMERGENCIA
 
 INSERT INTO emergencia (
@@ -81,4 +82,38 @@ INSERT INTO asignacion (
     ('AS003', 'SOL003', 'BR003', '2026-11-01 10:45:00', 'asignada', NULL),
     ('AS004', 'SOL004', 'BR004', '2026-11-01 11:45:00', 'asignada', NULL),
     ('AS005', 'SOL005', 'BR005', '2026-11-01 12:45:00', 'asignada', NULL);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- PARTE B. DOCE UPDATE: UNO POR TABLA, TODOS CON WHERE.
+
+-- 1. Ampliar la descripcion de una emergencia.
+UPDATE emergencia
+SET descripcion = 'Escenario simulado: diez viviendas requieren evaluacion.'
+WHERE cod_emergencia = 'EM001';
+
+
+
+
 
