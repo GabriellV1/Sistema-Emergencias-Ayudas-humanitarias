@@ -71,3 +71,14 @@ INSERT INTO membresia (
     ('ME004', 'PE004', 'BR004', '2026-10-01', NULL),
     ('ME005', 'PE005', 'BR005', '2026-10-01', NULL);
 
+-- 6. ASIGNACION
+INSERT INTO asignacion (
+    cod_asignacion, cod_solicitud, cod_brigada,
+    fecha_hora_asignacion, estado_atencion, fecha_hora_finalizacion
+) VALUES
+    ('AS001', 'SOL001', 'BR001', '2026-11-01 08:45:00', 'asignada', NULL),
+    ('AS002', 'SOL002', 'BR002', '2026-11-01 09:45:00', 'asignada', NULL),
+    ('AS003', 'SOL003', 'BR003', '2026-11-01 10:45:00', 'asignada', NULL),
+    ('AS004', 'SOL004', 'BR004', '2026-11-01 11:45:00', 'asignada', NULL),
+    ('AS005', 'SOL005', 'BR005', '2026-11-01 12:45:00', 'asignada', NULL);
+
