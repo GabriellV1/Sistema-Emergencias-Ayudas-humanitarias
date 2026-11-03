@@ -42,3 +42,21 @@ INSERT INTO personal (
     ('PE003', 'Persona de prueba 03', 'DEMO0003', '900000003', 'Logistica'),
     ('PE004', 'Persona de prueba 04', 'DEMO0004', '900000004', 'Control de incendios'),
     ('PE005', 'Persona de prueba 05', 'DEMO0005', '900000005', 'Evaluacion de danos');
+
+-- 4. SOLICITUD DE AYUDA
+
+INSERT INTO solicitud_ayuda (
+    cod_solicitud, cod_emergencia, fecha_hora_registro,
+    descripcion_necesidad, prioridad, estado_atencion
+) VALUES
+    ('SOL001', 'EM001', '2026-11-01 08:30:00',
+     'Agua potable y apoyo de rescate.', 'media', 'en atención'),
+    ('SOL002', 'EM002', '2026-11-01 09:30:00',
+     'Alimentos y apoyo sanitario.', 'alta', 'en atención'),
+    ('SOL003', 'EM003', '2026-11-01 10:30:00',
+     'Frazadas y apoyo logistico.', 'media', 'en atención'),
+    ('SOL004', 'EM004', '2026-11-01 11:30:00',
+     'Mascarillas y control de incendio.', 'alta', 'en atención'),
+    ('SOL005', 'EM005', '2026-11-01 12:30:00',
+     'Carpas y evaluacion de viviendas.', 'media', 'en atención');
+
