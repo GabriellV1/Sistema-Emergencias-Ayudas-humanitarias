@@ -128,6 +128,11 @@ UPDATE solicitud_ayuda
 SET prioridad = 'alta'
 WHERE cod_solicitud = 'SOL001';
 
+-- 5. Corregir la fecha de ingreso de una membresia de prueba.
+UPDATE membresia
+SET fecha_ingreso = '2026-09-15'
+WHERE cod_membresia = 'ME005';
+
 
 
 
