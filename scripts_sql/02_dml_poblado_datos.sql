@@ -118,6 +118,11 @@ UPDATE brigada
 SET especialidad = 'Busqueda, rescate y evacuacion'
 WHERE cod_brigada = 'BR001';
 
+-- 3. Corregir un telefono de prueba.
+UPDATE personal
+SET telefono = '900000101'
+WHERE cod_personal = 'PE001';
+
 
 
 
