@@ -60,3 +60,14 @@ INSERT INTO solicitud_ayuda (
     ('SOL005', 'EM005', '2026-11-01 12:30:00',
      'Carpas y evaluacion de viviendas.', 'media', 'en atención');
 
+-- 5. MEMBRESIA
+-- NULL en fecha_salida significa que la pertenencia sigue vigente.
+INSERT INTO membresia (
+    cod_membresia, cod_personal, cod_brigada, fecha_ingreso, fecha_salida
+) VALUES
+    ('ME001', 'PE001', 'BR001', '2026-10-01', NULL),
+    ('ME002', 'PE002', 'BR002', '2026-10-01', NULL),
+    ('ME003', 'PE003', 'BR003', '2026-10-01', NULL),
+    ('ME004', 'PE004', 'BR004', '2026-10-01', NULL),
+    ('ME005', 'PE005', 'BR005', '2026-10-01', NULL);
+
