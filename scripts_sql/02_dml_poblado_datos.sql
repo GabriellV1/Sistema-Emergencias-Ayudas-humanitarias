@@ -31,3 +31,14 @@ INSERT INTO brigada (
     ('BR003', 'Brigada Gamma', 'Logistica humanitaria', 'operativa'),
     ('BR004', 'Brigada Delta', 'Control de incendios', 'operativa'),
     ('BR005', 'Brigada Epsilon', 'Evaluacion de danos', 'operativa');
+
+-- 3. PERSONAL
+
+INSERT INTO personal (
+    cod_personal, nombre_completo, documento_identidad, telefono, especialidad
+) VALUES
+    ('PE001', 'Persona de prueba 01', 'DEMO0001', '900000001', 'Rescate'),
+    ('PE002', 'Persona de prueba 02', 'DEMO0002', '900000002', 'Enfermeria'),
+    ('PE003', 'Persona de prueba 03', 'DEMO0003', '900000003', 'Logistica'),
+    ('PE004', 'Persona de prueba 04', 'DEMO0004', '900000004', 'Control de incendios'),
+    ('PE005', 'Persona de prueba 05', 'DEMO0005', '900000005', 'Evaluacion de danos');
