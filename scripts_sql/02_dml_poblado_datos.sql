@@ -20,3 +20,14 @@ INSERT INTO emergencia (
      'Mariano Melgar, Arequipa', 'Escenario simulado de incendio urbano.', 'en atención'),
     ('EM005', 'Vientos fuertes', '2026-11-01 12:00:00',
      'Paucarpata, Arequipa', 'Escenario simulado de techos afectados.', 'en atención');
+
+-- 2. BRIGADA
+
+INSERT INTO brigada (
+    cod_brigada, nombre, especialidad, estado_operativo
+) VALUES
+    ('BR001', 'Brigada Alfa', 'Busqueda y rescate', 'operativa'),
+    ('BR002', 'Brigada Beta', 'Atencion sanitaria', 'operativa'),
+    ('BR003', 'Brigada Gamma', 'Logistica humanitaria', 'operativa'),
+    ('BR004', 'Brigada Delta', 'Control de incendios', 'operativa'),
+    ('BR005', 'Brigada Epsilon', 'Evaluacion de danos', 'operativa');
