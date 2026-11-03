@@ -113,6 +113,11 @@ UPDATE emergencia
 SET descripcion = 'Escenario simulado: diez viviendas requieren evaluacion.'
 WHERE cod_emergencia = 'EM001';
 
+-- 2. Precisar la especialidad de una brigada.
+UPDATE brigada
+SET especialidad = 'Busqueda, rescate y evacuacion'
+WHERE cod_brigada = 'BR001';
+
 
 
 
