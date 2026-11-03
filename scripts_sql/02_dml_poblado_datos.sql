@@ -123,6 +123,11 @@ UPDATE personal
 SET telefono = '900000101'
 WHERE cod_personal = 'PE001';
 
+-- 4. Dar mayor prioridad a una solicitud.
+UPDATE solicitud_ayuda
+SET prioridad = 'alta'
+WHERE cod_solicitud = 'SOL001';
+
 
 
 
