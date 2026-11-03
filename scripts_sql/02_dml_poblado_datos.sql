@@ -133,6 +133,11 @@ UPDATE membresia
 SET fecha_ingreso = '2026-09-15'
 WHERE cod_membresia = 'ME005';
 
+-- 6. Registrar el inicio de una intervencion.
+UPDATE asignacion
+SET estado_atencion = 'en ejecución'
+WHERE cod_asignacion = 'AS001';
+
 
 
 
