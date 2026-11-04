@@ -173,13 +173,63 @@ UPDATE asignacion
 SET estado_atencion = 'en ejecución'
 WHERE cod_asignacion = 'AS001';
 
+-- 7. ALMACEN
+INSERT INTO almacen (cod_almacen, nombre, direccion) VALUES
+    ('AL001', 'Almacen Central', 'Direccion de prueba 101, Cayma'),
+    ('AL002', 'Almacen Norte', 'Direccion de prueba 102, Cerro Colorado'),
+    ('AL003', 'Almacen Este', 'Direccion de prueba 103, Alto Selva Alegre'),
+    ('AL004', 'Almacen Sur', 'Direccion de prueba 104, Mariano Melgar'),
+    ('AL005', 'Almacen de Apoyo', 'Direccion de prueba 105, Paucarpata');
 
+-- 8. SUMINISTRO
+INSERT INTO suministro (
+    cod_suministro, nombre, descripcion, unidad_medida
+) VALUES
+    ('SU001', 'Agua potable', 'Botella sellada de un litro.', 'botella'),
+    ('SU002', 'Alimentos', 'Paquete de alimentos no perecibles.', 'paquete'),
+    ('SU003', 'Frazada', 'Frazada individual para abrigo.', 'unidad'),
+    ('SU004', 'Mascarilla', 'Mascarilla para proteccion respiratoria.', 'unidad'),
+    ('SU005', 'Carpa', 'Carpa familiar para alojamiento temporal.', 'unidad');
 
+-- 9. DETALLE DE SOLICITUD
+INSERT INTO detalle_solicitud (
+    cod_solicitud, cod_suministro, cantidad_solicitada
+) VALUES
+    ('SOL001', 'SU001', 100),
+    ('SOL002', 'SU002', 80),
+    ('SOL003', 'SU003', 50),
+    ('SOL004', 'SU004', 90),
+    ('SOL005', 'SU005', 60);
 
+-- 10. EXISTENCIA
+INSERT INTO existencia (
+    cod_almacen, cod_suministro, cantidad_disponible
+) VALUES
+    ('AL001', 'SU001', 480),
+    ('AL002', 'SU002', 270),
+    ('AL003', 'SU003', 190),
+    ('AL004', 'SU004', 360),
+    ('AL005', 'SU005', 235);
 
+-- 11. ENTREGA
+INSERT INTO entrega (
+    cod_entrega, cod_solicitud, cod_almacen, fecha_hora, nombre_receptor
+) VALUES
+    ('EN001', 'SOL001', 'AL001', '2026-11-02 08:00:00', 'Receptor de prueba 01'),
+    ('EN002', 'SOL002', 'AL002', '2026-11-02 09:00:00', 'Receptor de prueba 02'),
+    ('EN003', 'SOL003', 'AL003', '2026-11-02 10:00:00', 'Receptor de prueba 03'),
+    ('EN004', 'SOL004', 'AL004', '2026-11-02 11:00:00', 'Receptor de prueba 04'),
+    ('EN005', 'SOL005', 'AL005', '2026-11-02 12:00:00', 'Receptor de prueba 05');
 
-
-
+-- 12. DETALLE DE ENTREGA
+INSERT INTO detalle_entrega (
+    cod_entrega, cod_suministro, cantidad_entregada
+) VALUES
+    ('EN001', 'SU001', 20),
+    ('EN002', 'SU002', 30),
+    ('EN003', 'SU003', 10),
+    ('EN004', 'SU004', 40),
+    ('EN005', 'SU005', 15);
 
 
 -- PARTE C. COMPROBACION. Resultado esperado: 12 filas, cada una con total = 5.
