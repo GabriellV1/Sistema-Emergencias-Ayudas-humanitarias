@@ -83,7 +83,7 @@ INSERT INTO asignacion (
     ('AS004', 'SOL004', 'BR004', '2026-11-01 11:45:00', 'asignada', NULL),
     ('AS005', 'SOL005', 'BR005', '2026-11-01 12:45:00', 'asignada', NULL);
 
--- 7. ALMACEN
+-- 7. ALMACEN.
 INSERT INTO almacen (cod_almacen, nombre, direccion) VALUES
     ('AL001', 'Almacen Central', 'Direccion de prueba 101, Cayma'),
     ('AL002', 'Almacen Norte', 'Direccion de prueba 102, Cerro Colorado'),
