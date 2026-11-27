@@ -22,3 +22,15 @@ ALTER TABLE membresia
 ADD CONSTRAINT fk_membresia_brigada
 FOREIGN KEY (cod_brigada)
 REFERENCES brigada (cod_brigada);
+
+-- 3. Cada asignación relaciona una solicitud con una brigada.
+
+ALTER TABLE asignacion
+ADD CONSTRAINT fk_asignacion_solicitud
+FOREIGN KEY (cod_solicitud)
+REFERENCES solicitud_ayuda (cod_solicitud);
+
+ALTER TABLE asignacion
+ADD CONSTRAINT fk_asignacion_brigada
+FOREIGN KEY (cod_brigada)
+REFERENCES brigada (cod_brigada);
