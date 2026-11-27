@@ -10,3 +10,15 @@ ALTER TABLE solicitud_ayuda
 ADD CONSTRAINT fk_solicitud_emergencia
 FOREIGN KEY (cod_emergencia)
 REFERENCES emergencia (cod_emergencia);
+
+-- 2. Cada membresía relaciona una persona con una brigada.
+
+ALTER TABLE membresia
+ADD CONSTRAINT fk_membresia_personal
+FOREIGN KEY (cod_personal)
+REFERENCES personal (cod_personal);
+
+ALTER TABLE membresia
+ADD CONSTRAINT fk_membresia_brigada
+FOREIGN KEY (cod_brigada)
+REFERENCES brigada (cod_brigada);
