@@ -137,3 +137,31 @@ ORDER BY
     s.nombre,
     s.cod_suministro;
 
+
+-- 7. ASIGNACIONES DE BRIGADAS
+-- Incluye el historial completo de asignaciones.
+-- Una finalización NULL identifica una asignación abierta.
+
+SELECT
+    ag.cod_asignacion,
+    sa.cod_solicitud,
+    e.cod_emergencia,
+    e.tipo_desastre,
+    e.ubicacion,
+    b.cod_brigada,
+    b.nombre AS brigada,
+    b.especialidad,
+    ag.fecha_hora_asignacion,
+    ag.estado_atencion AS estado_asignacion,
+    ag.fecha_hora_finalizacion
+FROM asignacion ag
+JOIN solicitud_ayuda sa
+    ON ag.cod_solicitud = sa.cod_solicitud
+JOIN emergencia e
+    ON sa.cod_emergencia = e.cod_emergencia
+JOIN brigada b
+    ON ag.cod_brigada = b.cod_brigada
+ORDER BY
+    ag.fecha_hora_asignacion DESC,
+    ag.cod_asignacion;
+
