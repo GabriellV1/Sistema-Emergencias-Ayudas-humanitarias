@@ -46,3 +46,15 @@ ALTER TABLE detalle_solicitud
 ADD CONSTRAINT fk_detalle_solicitud_suministro
 FOREIGN KEY (cod_suministro)
 REFERENCES suministro (cod_suministro);
+
+-- 5. Cada existencia corresponde a un almacén y un suministro.
+
+ALTER TABLE existencia
+ADD CONSTRAINT fk_existencia_almacen
+FOREIGN KEY (cod_almacen)
+REFERENCES almacen (cod_almacen);
+
+ALTER TABLE existencia
+ADD CONSTRAINT fk_existencia_suministro
+FOREIGN KEY (cod_suministro)
+REFERENCES suministro (cod_suministro);
