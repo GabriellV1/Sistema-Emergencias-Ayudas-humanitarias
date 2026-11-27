@@ -165,3 +165,33 @@ ORDER BY
     ag.fecha_hora_asignacion DESC,
     ag.cod_asignacion;
 
+-- 8. PERSONAL CON MEMBRESÍA VIGENTE
+-- La membresía debe haber comenzado.
+-- La fecha de salida se considera inclusiva.
+
+SELECT
+    m.cod_membresia,
+    b.cod_brigada,
+    b.nombre AS brigada,
+    p.cod_personal,
+    p.nombre_completo,
+    p.telefono,
+    p.especialidad AS especialidad_personal,
+    m.fecha_ingreso,
+    m.fecha_salida
+FROM membresia m
+JOIN brigada b
+    ON m.cod_brigada = b.cod_brigada
+JOIN personal p
+    ON m.cod_personal = p.cod_personal
+WHERE m.fecha_ingreso <= CURRENT_DATE
+  AND (
+      m.fecha_salida IS NULL
+      OR m.fecha_salida >= CURRENT_DATE
+  )
+ORDER BY
+    b.cod_brigada,
+    p.nombre_completo,
+    m.cod_membresia;
+
+
