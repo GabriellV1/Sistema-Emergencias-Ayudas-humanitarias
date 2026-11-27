@@ -32,3 +32,25 @@ JOIN emergencia e
 ORDER BY
     sa.fecha_hora_registro DESC,
     sa.cod_solicitud;
+
+-- 3. DETALLE DE LOS SUMINISTROS SOLICITADOS
+-- Una solicitud puede aparecer varias veces:
+-- una fila por cada suministro solicitado.
+
+SELECT
+    sa.cod_solicitud,
+    sa.prioridad,
+    sa.estado_atencion,
+    s.cod_suministro,
+    s.nombre AS suministro,
+    s.unidad_medida,
+    ds.cantidad_solicitada
+FROM solicitud_ayuda sa
+JOIN detalle_solicitud ds
+    ON sa.cod_solicitud = ds.cod_solicitud
+JOIN suministro s
+    ON ds.cod_suministro = s.cod_suministro
+ORDER BY
+    sa.cod_solicitud,
+    s.cod_suministro;
+
