@@ -40,5 +40,21 @@ CREATE TABLE ingreso_suministro (
         CHECK (BTRIM(origen) <> '')
 );
 
+-- ÍNDICES PARA CONSULTAR LOS INGRESOS
+
+CREATE INDEX idx_ingreso_almacen_fecha
+ON ingreso_suministro (
+    cod_almacen,
+    fecha_hora_registro DESC
+);
+
+
+CREATE INDEX idx_ingreso_suministro_fecha
+ON ingreso_suministro (
+    cod_suministro,
+    fecha_hora_registro DESC
+);
+
+
 
 
