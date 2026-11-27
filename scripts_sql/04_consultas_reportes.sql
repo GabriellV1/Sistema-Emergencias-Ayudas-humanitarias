@@ -93,3 +93,25 @@ ORDER BY
     ds.cod_solicitud,
     s.cod_suministro;
 
+
+-- 5. STOCK REGISTRADO POR ALMACÉN
+-- Incluye existencias con saldo cero.
+-- Una combinación almacén-suministro sin registro no aparece.
+
+SELECT
+    a.cod_almacen,
+    a.nombre AS almacen,
+    a.direccion,
+    s.cod_suministro,
+    s.nombre AS suministro,
+    s.unidad_medida,
+    ex.cantidad_disponible
+FROM existencia ex
+JOIN almacen a
+    ON ex.cod_almacen = a.cod_almacen
+JOIN suministro s
+    ON ex.cod_suministro = s.cod_suministro
+ORDER BY
+    a.cod_almacen,
+    s.cod_suministro;
+
