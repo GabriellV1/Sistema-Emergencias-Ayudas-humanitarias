@@ -34,3 +34,15 @@ ALTER TABLE asignacion
 ADD CONSTRAINT fk_asignacion_brigada
 FOREIGN KEY (cod_brigada)
 REFERENCES brigada (cod_brigada);
+
+-- 4. Cada detalle indica qué suministro se solicita.
+
+ALTER TABLE detalle_solicitud
+ADD CONSTRAINT fk_detalle_solicitud_solicitud
+FOREIGN KEY (cod_solicitud)
+REFERENCES solicitud_ayuda (cod_solicitud);
+
+ALTER TABLE detalle_solicitud
+ADD CONSTRAINT fk_detalle_solicitud_suministro
+FOREIGN KEY (cod_suministro)
+REFERENCES suministro (cod_suministro);
