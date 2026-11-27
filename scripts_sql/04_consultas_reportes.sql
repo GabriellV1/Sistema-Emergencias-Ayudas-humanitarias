@@ -115,3 +115,25 @@ ORDER BY
     a.cod_almacen,
     s.cod_suministro;
 
+-- 6. STOCK TOTAL POR SUMINISTRO
+-- Suma el mismo suministro entre todos los almacenes.
+-- Si no tiene existencias registradas, muestra cero.
+-- No mezcla suministros ni unidades de medida diferentes.
+
+SELECT
+    s.cod_suministro,
+    s.nombre AS suministro,
+    s.unidad_medida,
+    COALESCE(SUM(ex.cantidad_disponible), 0)
+        AS stock_total_registrado
+FROM suministro s
+LEFT JOIN existencia ex
+    ON s.cod_suministro = ex.cod_suministro
+GROUP BY
+    s.cod_suministro,
+    s.nombre,
+    s.unidad_medida
+ORDER BY
+    s.nombre,
+    s.cod_suministro;
+
