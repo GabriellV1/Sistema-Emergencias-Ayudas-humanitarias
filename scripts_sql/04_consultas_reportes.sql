@@ -33,6 +33,7 @@ ORDER BY
     sa.fecha_hora_registro DESC,
     sa.cod_solicitud;
 
+
 -- 3. DETALLE DE LOS SUMINISTROS SOLICITADOS
 -- Una solicitud puede aparecer varias veces:
 -- una fila por cada suministro solicitado.
@@ -52,5 +53,43 @@ JOIN suministro s
     ON ds.cod_suministro = s.cod_suministro
 ORDER BY
     sa.cod_solicitud,
+    s.cod_suministro;
+
+
+-- 4. CANTIDADES SOLICITADAS, ENTREGADAS Y PENDIENTES
+-- Suma las entregas por solicitud y suministro.
+-- Incluye suministros que todavía no tienen entregas.
+-- Un pendiente negativo indica una entrega excesiva.
+
+WITH entregado AS (
+    SELECT
+        e.cod_solicitud,
+        de.cod_suministro,
+        SUM(de.cantidad_entregada) AS total_entregado
+    FROM entrega e
+    JOIN detalle_entrega de
+        ON e.cod_entrega = de.cod_entrega
+    GROUP BY
+        e.cod_solicitud,
+        de.cod_suministro
+)
+SELECT
+    ds.cod_solicitud,
+    s.cod_suministro,
+    s.nombre AS suministro,
+    s.unidad_medida,
+    ds.cantidad_solicitada,
+    COALESCE(en.total_entregado, 0) AS cantidad_entregada,
+    ds.cantidad_solicitada
+        - COALESCE(en.total_entregado, 0)
+        AS cantidad_pendiente
+FROM detalle_solicitud ds
+JOIN suministro s
+    ON ds.cod_suministro = s.cod_suministro
+LEFT JOIN entregado en
+    ON ds.cod_solicitud = en.cod_solicitud
+   AND ds.cod_suministro = en.cod_suministro
+ORDER BY
+    ds.cod_solicitud,
     s.cod_suministro;
 
